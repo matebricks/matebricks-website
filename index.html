@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="matebricks.css">
+    <title>MateBricks | Robots</title>
+    <link rel="icon" type="image/jpg" href="logowhite.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+    <div class="preloader">
+       
+        <div class="spinner"></div>
+        <span class="blur2"></span>
+            <span class="blur2"></span>
+    </div>
+    <style>
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #18181B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.spinner {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    animation: spin 1.5s linear infinite;
+}
+
+.spinner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top-color: #ff4a4a;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.content {
+    display: none; /* Hide the main content initially */
+}
+
+body.loaded .preloader {
+    display: none; /* Hide the preloader once content is loaded */
+}
+
+body.loaded .content {
+    display: block; /* Show the main content once loaded */
+}
+.blur2{
+    position: absolute;
+    box-shadow: 0 0 1000px 50px #ff0000;
+    z-index: -100;
+}
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+}
+    </style>
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+            // Simulate content loading
+            setTimeout(function () {
+                document.body.classList.add('loaded');
+                // Initial GSAP animations
+                gsap.from(".animate-container", { duration: 1, opacity: 0, y: 20 });
+                gsap.from(".animate-content", { duration: 1, opacity: 0, y: 20, delay: 0.5 });
+               
+
+                // ScrollTrigger animations
+                gsap.registerPlugin(ScrollTrigger);
+
+                gsap.from(".header", {
+                    scrollTrigger: {
+                        trigger: ".header",
+                        start: "top 80%",
+                        end: "bottom 60%",
+                        toggleActions: "play none none reverse",
+                    },
+                    opacity: 0,
+                    y: 50,
+                    duration: 1,
+                });
+
+                gsap.from(".features .card", {
+                    scrollTrigger: {
+                        trigger: ".features .card",
+                        start: "top 90%",
+                        end: "bottom 60%",
+                        toggleActions: "play none none reverse",
+                    },
+                    opacity: 0,
+                    y: 50,
+                    duration: 1,
+                    stagger: 0.3,
+                });
+
+                gsap.from(".pricing .card", {
+                    scrollTrigger: {
+                        trigger: ".pricing .card",
+                        start: "top 90%",
+                        end: "bottom 60%",
+                        toggleActions: "play none none reverse",
+                    },
+                    opacity: 0,
+                    y: 50,
+                    duration: 1,
+                    stagger: 0.3,
+                });
+
+                gsap.from("footer .column", {
+                    scrollTrigger: {
+                        trigger: "footer .column",
+                        start: "top 90%",
+                        end: "bottom 60%",
+                        toggleActions: "play none none reverse",
+                    },
+                    opacity: 0,
+                    y: 50,
+                    duration: 1,
+                    stagger: 0.3,
+                });
+            }, 3000); // Show preloader for 3 seconds (adjust as needed)
+        });
+</script>
+    <div class="content">
+    <nav>
+        <div class="nav-logo">
+            <a href="https://imgbb.com/"><img src="https://i.ibb.co/9H1CJpM/logowhite.png" alt="logowhite" border="0"></a>
+        </div>
+
+        
+        <span class="blur2"></span>
+        <span class="blur2"></span>
+        <ul class="nav-links">
+            <li class="link"><a href="#">Home</a></li>
+            <li id="link1" class="link"><a href="#">Features</a></li>
+            <li id="link2" class="link"><a href="#">Pricing</a></li>
+            <li id="link3" class="link"><a href="#">About</a></li>
+        </ul>
+        <button class="btn">Order Now</button>
+    </nav>
+
+    <header class="container animate-container">
+        <div class="content animate-content">
+            <span class="blur animate-blur"></span>
+            <span class="blur animate-blur"></span>
+            <h1>CREATE ROBOT AT <span>MateBricks</span> with your own preference</h1>
+            <p>
+                At Matebricks you can make your own Robots with your own customizations. We have the Nexus Ai integrated in all robots for better responses from our robots. 
+                <a style="color:#fff; cursor: pointer; font-family: cursive;">
+                    <h2>Want to create by yourself? (DIY) Click here. <i class='bx bxs-hand-up'></i></h2>
+                </a>
+            </p>
+            <button class="btn animate-button">Get Started</button>
+        </div>
+        <div class="image animate-image">
+            <img src="hero.jpg">
+        </div>
+    </header>
+   
+    
+    <section class="container">
+        <h2 class="header">OUR FEATURES</h2>
+        <div class="features" id="features">
+            <div class="card">
+                <span><i class="ri-money-dollar-box-line"></i></span>
+                <h4>First Test then pay!</h4>
+                <p>
+                    We a offer a service in which you first test if you like then order and pay!
+                </p>
+                
+            </div>
+            <div class="card">
+                <span><i class="ri-bug-line"></i></span>
+                <h4>Less or no Bugs!</h4>
+                <p>
+                   Our Robots codes are written by professionals so there is less or no bugs!
+                </p>
+                
+            </div>
+            <div class="card">
+                <span><i class='bx bx-support' ></i></i></span>
+                <h4>Customer Care</h4>
+                <p>
+                    With our 24X7 chat care you can tell us our issue and we will try our 100% to solve it.
+                </p>
+               
+            </div>
+            <div class="card">
+                <span><i class='bx bx-credit-card-alt' ></i></span>
+                <h4>Money Back guarantee!</h4>
+                <p>
+                    If you have any problems with our robots until 5 days of purchase we will refund 90% of your money.
+                </p>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2 class="header">Robot Plans $</h2>
+        <p class="sub-header">
+            Our pricing plans come with various membership tiers, each tailored to cater to different advantages.
+        </p>
+        <div class="pricing">
+            <div class="card">
+                <div class="content">
+                    <h4>Basic Plan</h4>
+                    <p>*cost of robot not included</p>
+                    <h3>0$</h3>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        Can chose Robots Online
+                    </p>
+                    <p>
+                        <i class='bx bxs-x-circle' ></i>
+                        Cannot use it physically i.e purchase it.
+                    </p>
+                    <p>
+                        <i class='bx bxs-x-circle' ></i>
+                        Can not create more than one prototype.
+                    </p>
+                    <p>
+                        <i class='bx bxs-x-circle' ></i>
+                        Don't have access to any type of customer support.
+                    </p>
+                    <p>
+                        <i class='bx bxs-x-circle' ></i>
+                        Cannot customize Robots according to your taste.
+                    </p>
+                </div>
+                <button class="btn">Join Now</button>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h4>Gold Plan</h4>
+                    <p>*cost of robot not included</p>
+                    <h3>15$/per-month</h3>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        Can chose Robots Online
+                    </p>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        Can use it physically i.e purchase it.
+                    </p>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        Create multiple prototype.
+                    </p>
+                    <p>
+                        <i class='bx bxs-x-circle' ></i>
+                        Don't have access to 24X7 Customer Support. Only 12X6 customer support available.
+                    </p>
+                    <p>
+                        <i class='bx bxs-x-circle' ></i>
+                        Cannot customize Robots according to your taste.
+                    </p>
+                </div>
+                <button class="btn">Join Now</button>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h4>Diamond Plan</h4>
+                    <p>*cost of robot not included</p>
+                    <h3>25$/per-month</h3>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        Can chose Robots Online
+                    </p>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        Can use it physically i.e purchase it.
+                    </p>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        Create multiple prototype.
+                    </p>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        Have access to 24X7 customer support.
+                    </p>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        Can customize Robots according to your taste.
+                    </p>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        Free home delivery.
+                    </p>
+                </div>
+                <button class="btn">Join Now</button>
+                
+            </div>
+        </div>
+    </section>
+    <a style="font-size: x-large; color: #fff; font-weight: bolder; padding-left: 120px; font-size: 23px; ">Note the robots are not been sold yet as we don't have funds kindly <a style=" font-size: 23px; cursor: pointer; color: #ff0000;">Contact Us for Donation.</a></a> 
+    <footer class="container">
+        <span class="blur"></span>
+        <span class="blur"></span>
+        <div class="column">
+            <div class="logo">
+                <img src="logowhite.png">
+            </div>
+            <p>
+                MateBricks Robots are mates of you for a long time.
+            </p>
+            <div class="socials">
+                <a href="#"><i class="ri-youtube-line"></i></a>
+                <a href="#"><i class="ri-instagram-line"></i></a>
+                <a href="#"><i class="ri-twitter-line"></i></a>
+            </div>
+        </div>
+        <div class="column">
+            <h4>Company</h4>
+            <a href="#">Business</a>
+            <a href="#">Partnership</a>
+            <a href="#">Network</a>
+        </div>
+        <div class="column">
+            <h4>About Us</h4>
+            <a href="#">Blogs</a>
+            <a href="#">Channels</a>
+            <a href="#">Sponsors</a>
+        </div>
+        <div class="column">
+            <h4>Contact</h4>
+            <a href="#">Contact Us</a>
+            <a href="#">Privicy Policy</a>
+            <a href="#">Terms & Conditions</a>
+        </div>
+    </footer>
+
+    <div class="copyright">
+       Made with ❤️ By <a style="color:#ff0000; font-weight: bolder; font-size: 30px; font-family: cursive;"> Vertexvolts</a> <br>
+       
+    </div>
+</div>
+
+    <script src="matebricks.js"></script>
+</body>
+
+</html>
