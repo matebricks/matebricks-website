@@ -19,7 +19,7 @@ a{
 }
 
 body{
-    font-family: monospace;
+    font-family: 'Poppins', sans-serif;
     font-size:large;
     background-color: #18181B;
 }
@@ -118,6 +118,127 @@ background-color:  #18181B;
     position: absolute;
     box-shadow: 0 0 1000px 50px #ff0000;
     z-index: -100;
+}
+/* General styles for the container */
+.container.mate-watch {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start; /* Ensure content aligns from top */
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #18181B;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+/* Header styles */
+.container.mate-watch .header {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px; /* Increased margin for better spacing */
+    color: #ffffff;
+    flex-basis: 100%; /* Ensure the header takes full width */
+    text-align: left; /* Align header text to the left */
+}
+
+/* Watch content styles */
+.watch-content {
+    flex: 1;
+    max-width: 60%;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to the start (left) */
+}
+
+.watch-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.watch-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.watch-content ul li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+}
+
+.watch-content ul li i {
+    color: #ff0000;
+    margin-right: 10px;
+}
+
+/* Button styling */
+.watch-content .btn {
+    display: inline-block;
+    padding: 15px 30px; /* Reduced padding for a more balanced button size */
+    background-color: #ff0000;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bolder;
+    border: none;
+    border-radius: 60px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    align-self: flex-start; /* Align button to the start */
+    margin-top: 20px; /* Add space above the button */
+}
+.image-disclaimer {
+    font-size: 12px;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 15px;
+    font-weight: bolder;
+}
+
+
+/* Additional styling for responsiveness */
+@media (max-width: 768px) {
+    .container.mate-watch {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .watch-content {
+        max-width: 100%;
+        padding-right: 0;
+    }
+
+    .watch-content .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+/* Watch image styles */
+.watch-image {
+    flex: 1;
+    max-width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.watch-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header{
