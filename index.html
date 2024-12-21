@@ -4,11 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Basic Meta Tags -->
+<meta name="description" content="Create your own customizable robots at MateBricks.shop. Experience innovative AI integration, robust features, and tailored plans for your robotic needs.">
+<meta name="keywords" content="MateBricks, Custom Robots, AI Robots, Nexus AI, Robot Features, Robot Plans, DIY Robots, MateBricks.shop">
+<meta name="author" content="Vertexvolts">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="MateBricks | Create Your Own Robots">
+<meta property="og:description" content="Customize robots at MateBricks.shop with AI-powered features and plans tailored to your needs.">
+<meta property="og:url" content="https://www.matebricks.shop">
+<meta property="og:image" content="https://www.matebricks.shop/hero.jpg">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MateBricks | Create Your Own Robots">
+<meta name="twitter:description" content="Customize robots at MateBricks.shop with AI-powered features and plans tailored to your needs.">
+<meta name="twitter:image" content="https://www.matebricks.shop/hero.jpg">
+
+<!-- Mobile App Compatibility -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="MateBricks.shop">
+
+<!-- Structured Data (JSON-LD for SEO) -->
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "MateBricks",
+  "url": "https://www.matebricks.shop",
+  "logo": "https://www.matebricks.shop/matebrickslogo(main).png",
+  "description": "Create customizable robots with AI integration at MateBricks.shop.",
+  "sameAs": [
+    "https://www.instagram.com/matebricksofficial",
+    "https://twitter.com/matebricks",
+    "https://youtube.com/matebricks"
+  ]
+}
+</script>
+
+<!-- Browser Compatibility -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="matebricks.css">
     <title>MateBricks | Robots</title>
-    <link rel="icon" type="image/jpg" href="logowhite.png">
+    <link rel="icon" type="image/jpg" href="matebrickslogo(main).png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
 </head>
@@ -88,86 +133,90 @@ body.loaded .content {
 }
     </style>
  <script>
-  document.addEventListener("DOMContentLoaded", function () {
-            // Simulate content loading
-            setTimeout(function () {
-                document.body.classList.add('loaded');
-                // Initial GSAP animations
-                gsap.from(".animate-container", { duration: 1, opacity: 0, y: 20 });
-                gsap.from(".animate-content", { duration: 1, opacity: 0, y: 20, delay: 0.5 });
-               
-
-                // ScrollTrigger animations
-                gsap.registerPlugin(ScrollTrigger);
-
-                gsap.from(".header", {
-                    scrollTrigger: {
-                        trigger: ".header",
-                        start: "top 80%",
-                        end: "bottom 60%",
-                        toggleActions: "play none none reverse",
-                    },
-                    opacity: 0,
-                    y: 50,
-                    duration: 1,
-                });
-
-                gsap.from(".features .card", {
-                    scrollTrigger: {
-                        trigger: ".features .card",
-                        start: "top 90%",
-                        end: "bottom 60%",
-                        toggleActions: "play none none reverse",
-                    },
-                    opacity: 0,
-                    y: 50,
-                    duration: 1,
-                    stagger: 0.3,
-                });
-
-                gsap.from(".pricing .card", {
-                    scrollTrigger: {
-                        trigger: ".pricing .card",
-                        start: "top 90%",
-                        end: "bottom 60%",
-                        toggleActions: "play none none reverse",
-                    },
-                    opacity: 0,
-                    y: 50,
-                    duration: 1,
-                    stagger: 0.3,
-                });
-
-                gsap.from("footer .column", {
-                    scrollTrigger: {
-                        trigger: "footer .column",
-                        start: "top 90%",
-                        end: "bottom 60%",
-                        toggleActions: "play none none reverse",
-                    },
-                    opacity: 0,
-                    y: 50,
-                    duration: 1,
-                    stagger: 0.3,
-                });
-            }, 3000); // Show preloader for 3 seconds (adjust as needed)
-        });
-</script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Add the preloader class when DOM is ready
+        document.body.classList.add('loading');
+  
+        // Wait until all content, including images, is fully loaded
+        window.onload = function () {
+            document.body.classList.remove('loading');
+            document.body.classList.add('loaded');
+  
+            // Initial GSAP animations
+            gsap.from(".animate-container", { duration: 1, opacity: 0, y: 20 });
+            gsap.from(".animate-content", { duration: 1, opacity: 0, y: 20, delay: 0.5 });
+  
+            // ScrollTrigger animations
+            gsap.registerPlugin(ScrollTrigger);
+  
+            gsap.from(".header", {
+                scrollTrigger: {
+                    trigger: ".header",
+                    start: "top 80%",
+                    end: "bottom 60%",
+                    toggleActions: "play none none reverse",
+                },
+                opacity: 0,
+                y: 50,
+                duration: 1,
+            });
+  
+            gsap.from(".features .card", {
+                scrollTrigger: {
+                    trigger: ".features .card",
+                    start: "top 90%",
+                    end: "bottom 60%",
+                    toggleActions: "play none none reverse",
+                },
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                stagger: 0.3,
+            });
+  
+            gsap.from(".pricing .card", {
+                scrollTrigger: {
+                    trigger: ".pricing .card",
+                    start: "top 90%",
+                    end: "bottom 60%",
+                    toggleActions: "play none none reverse",
+                },
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                stagger: 0.3,
+            });
+  
+            gsap.from("footer .column", {
+                scrollTrigger: {
+                    trigger: "footer .column",
+                    start: "top 90%",
+                    end: "bottom 60%",
+                    toggleActions: "play none none reverse",
+                },
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                stagger: 0.3,
+            });
+        };
+    });
+  </script>
+  
     <div class="content">
     <nav>
         <div class="nav-logo">
             <a href="#">
-                <img src="logowhite.png">
+                <img src="matebrickslogo(main).png">
             </a>
         </div>
 
         
-        <span class="blur2"></span>
-        <span class="blur2"></span>
+       
         <ul class="nav-links">
             <li class="link"><a href="#">Home</a></li>
             <li id="link1" class="link"><a href="#">Features</a></li>
-            <li id="link2" class="link"><a href="#">Pricing</a></li>
+            <li id="link2" class="link"><a href="#">Mate Watch 1</a></li>
             <li id="link3" class="link"><a href="#">About</a></li>
         </ul>
         <button class="btn">Order Now</button>
@@ -175,8 +224,7 @@ body.loaded .content {
 
     <header class="container animate-container">
         <div class="content animate-content">
-            <span class="blur animate-blur"></span>
-            <span class="blur animate-blur"></span>
+            
             <h1>CREATE ROBOT AT <span>MateBricks</span> with your own preference</h1>
             <p>
                 At Matebricks you can make your own Robots with your own customizations. We have the Nexus Ai integrated in all robots for better responses from our robots. 
@@ -229,6 +277,24 @@ body.loaded .content {
             </div>
         </div>
     </section>
+    <section class="container mate-watch">
+        <h2 class="header">Mate Watch 1</h2>
+        <div class="watch-content">
+            <p>Mate Watch 1 is your ultimate companion for staying connected. It features real-time updates, customizable alerts, and seamless integration with your devices. Our smartwatch is modernly designed with amazing features such as length measuring, an always-on display, and AI integration for enhanced usability.</p>
+            <ul>
+                <li><i class="ri-checkbox-circle-line"></i>Orion Ai integrated</li>
+                <li><i class="ri-checkbox-circle-line"></i>Smooth user experience</li>
+                <li><i class="ri-checkbox-circle-line"></i> Stylish and lightweight design</li>
+                <li><i class="ri-checkbox-circle-line"></i> Durable for workouts</li>
+            </ul>
+            <button class="btn">Learn More</button>
+        </div>
+        <div class="watch-image">
+            <img src="durable.jpg" alt="Mate Watch 1">
+            <p class="image-disclaimer">Image of Mate Watch 1 is yet to be revealed. Image taken from Unsplash.</p>
+        </div>
+    </section>
+    
 
     <section class="container">
         <h2 class="header">Robot Plans $</h2>
@@ -327,13 +393,95 @@ body.loaded .content {
             </div>
         </div>
     </section>
-    <a style="font-size: x-large; color: #fff; font-weight: bolder; padding-left: 120px; font-size: 23px; ">Note the robots are not been sold yet as we don't have funds kindly <a style=" font-size: 23px; cursor: pointer; color: #ff0000;">Contact Us for Donation.</a></a> 
+    <!-- Modal -->
+<div id="orderModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>We have not launched yet !</h2>
+      <p>Sorry, our products our not launched yet check our insta page for launch details.</p>
+    </div>
+  </div>
+<style>
+    /* Modal container */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+  padding-top: 180px;
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  border-radius: 60px;
+  border: #ff0000 2px solid;
+}
+
+/* Close button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+</style>  
+
+<script>
+    // Get the modal
+var modal = document.getElementById("orderModal");
+
+// Get the buttons that will trigger the modal
+var orderBtn = document.querySelectorAll('.btn');
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When any button is clicked, show the modal
+orderBtn.forEach(button => {
+  button.addEventListener("click", function() {
+    modal.style.display = "block";
+  });
+});
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+</script>
+    
     <footer class="container">
-        <span class="blur"></span>
-        <span class="blur"></span>
+        
         <div class="column">
             <div class="logo">
-                <img src="logowhite.png">
+                <img src="matebrickslogo(main).png">
             </div>
             <p>
                 MateBricks Robots are mates of you for a long time.
@@ -365,7 +513,7 @@ body.loaded .content {
     </footer>
 
     <div class="copyright">
-       Made with ❤️ By <a style="color:#ff0000; font-weight: bolder; font-size: 30px; font-family: cursive;"> Vertexvolts</a> <br>
+       Made with ❤️ By <a style="color:#ff0000; font-weight: bolder; font-size: 20px; font-family: monospace"> Vertexvolts</a> <br>
        
     </div>
 </div>
